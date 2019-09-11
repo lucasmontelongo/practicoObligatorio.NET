@@ -9,6 +9,7 @@
 
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.All" Version="2.0.9" />
+    <PackageReference Include="MongoDB.Driver" Version="2.9.1" />
   </ItemGroup>
 
   <ItemGroup>
@@ -35,6 +36,11 @@
     <Content Include="ClientApp\app\employee\list\employee-list.component.html" />
     <Content Include="ClientApp\app\employee\manage\manage-employee.component.css" />
     <Content Include="ClientApp\app\employee\manage\manage-employee.component.html" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\BusinessLogicLayer\BusinessLogicLayer.csproj" />
+    <ProjectReference Include="..\CrossCutting\Shared.csproj" />
   </ItemGroup>
 
   <ItemGroup>
