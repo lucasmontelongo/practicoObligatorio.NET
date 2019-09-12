@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{2373F984-19FE-43E7-8A47-5527B223BA8D}</ProjectGuid>
+    <ProjectGuid>{363F922F-7385-4149-BE74-C745E1313C6E}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <RootNamespace>PresentationLayerWinform</RootNamespace>
     <AssemblyName>PresentationLayerWinform</AssemblyName>
@@ -31,7 +31,14 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -44,14 +51,41 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Form1.cs">
+    <Compile Include="deleteEmployeeForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="deleteEmployeeForm.Designer.cs">
+      <DependentUpon>deleteEmployeeForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="indexForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="indexForm.Designer.cs">
+      <DependentUpon>indexForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="addEmployeeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="addEmployeeForm.Designer.cs">
+      <DependentUpon>addEmployeeForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="updateEmployeeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="updateEmployeeForm.Designer.cs">
+      <DependentUpon>updateEmployeeForm.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="addEmployeeForm.resx">
+      <DependentUpon>addEmployeeForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="deleteEmployeeForm.resx">
+      <DependentUpon>deleteEmployeeForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="indexForm.resx">
+      <DependentUpon>indexForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -61,6 +95,18 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="updateEmployeeForm.resx">
+      <DependentUpon>updateEmployeeForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\DataSources\BusinessLogicLayer.BLEmployees.datasource" />
+    <None Include="Properties\DataSources\BusinessLogicLayer.IBLEmployees.datasource" />
+    <None Include="Properties\DataSources\Shared.Entities.Employee.datasource" />
+    <None Include="Properties\DataSources\Shared.Entities.FullTimeEmployee.datasource" />
+    <None Include="Properties\DataSources\Shared.Entities.PartTimeEmployee.datasource" />
+    <None Include="Properties\DataSources\Shared.Exception.EmployeeNotFoundException.datasource" />
+    <None Include="Properties\DataSources\Shared.Exception.TypeFullTimeEmployeeException.datasource" />
+    <None Include="Properties\DataSources\Shared.Exception.TypePartTimeEmployeeException.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -73,6 +119,23 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BusinessLogicLayer\BusinessLogicLayer.csproj">
+      <Project>{a07aa8df-3a92-4cc5-b111-5dea0447c2a3}</Project>
+      <Name>BusinessLogicLayer</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CrossCutting\Shared.csproj">
+      <Project>{8b1e409e-8eb8-4171-8d99-5db230da4889}</Project>
+      <Name>Shared</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DataAccessLayer\DataAccessLayer.csproj">
+      <Project>{135e79f3-5b60-4253-8ca1-53dfe3a6024b}</Project>
+      <Name>DataAccessLayer</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
