@@ -26,9 +26,8 @@ namespace PresentationLayerWinform
 
         private void deleteButton_Click(object sender, EventArgs e)
         {
-            DataAccessLayer.DALEmployeesEF dalef = new DataAccessLayer.DALEmployeesEF();
-            BusinessLogicLayer.BLEmployees bl = new BusinessLogicLayer.BLEmployees(dalef);
-            bl.DeleteEmployee(indexForm.idEmployeeGlobal);
+            ServiceLayer.ServiceEmployeeProxy proxy = new ServiceLayer.ServiceEmployeeProxy();
+            proxy.DeleteEmployee(indexForm.idEmployeeGlobal);
             this.Close();
         }
     }

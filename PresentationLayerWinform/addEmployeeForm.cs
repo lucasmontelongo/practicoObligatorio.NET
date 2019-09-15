@@ -19,8 +19,7 @@ namespace PresentationLayerWinform
 
         private void addEmployeeButton_Click(object sender, EventArgs e)
         {
-            DataAccessLayer.DALEmployeesEF dalef = new DataAccessLayer.DALEmployeesEF();
-            BusinessLogicLayer.BLEmployees bl = new BusinessLogicLayer.BLEmployees(dalef);
+            ServiceLayer.ServiceEmployeeProxy proxy = new ServiceLayer.ServiceEmployeeProxy();
             if (typeEmployeeBox.Text == "FullTime")
             {
                 Shared.Entities.FullTimeEmployee emp = new Shared.Entities.FullTimeEmployee()
@@ -29,7 +28,7 @@ namespace PresentationLayerWinform
                     StartDate = datePicker.Value,
                     Salary = (int)salaryBox.Value
                 };
-                bl.AddEmployee(emp);
+                proxy.AddEmployee(emp);
             }
             else
             {
@@ -39,7 +38,7 @@ namespace PresentationLayerWinform
                     StartDate = datePicker.Value,
                     HourlyRate = (int)hourlyRateBox.Value
                 };
-                bl.AddEmployee(emp);
+                proxy.AddEmployee(emp);
             }
             this.Close();
         }

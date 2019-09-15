@@ -96,11 +96,9 @@
             // 
             // bLEmployeesBindingSource
             // 
-            this.bLEmployeesBindingSource.DataSource = typeof(BusinessLogicLayer.BLEmployees);
             // 
             // bLEmployeesBindingSource1
             // 
-            this.bLEmployeesBindingSource1.DataSource = typeof(BusinessLogicLayer.BLEmployees);
             // 
             // typePartTimeEmployeeExceptionBindingSource
             // 

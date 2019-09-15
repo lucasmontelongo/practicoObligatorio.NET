@@ -20,9 +20,8 @@ namespace PresentationLayerWinform
 
         private void loadDataEmployee()
         {
-            DataAccessLayer.DALEmployeesEF dalef = new DataAccessLayer.DALEmployeesEF();
-            BusinessLogicLayer.BLEmployees bl = new BusinessLogicLayer.BLEmployees(dalef);
-            Shared.Entities.Employee emp = bl.GetEmployee(indexForm.idEmployeeGlobal);
+            ServiceLayer.ServiceEmployeeProxy proxy = new ServiceLayer.ServiceEmployeeProxy();
+            Shared.Entities.Employee emp = proxy.GetEmployee(indexForm.idEmployeeGlobal);
             if(emp.GetType().Name == "FullTimeEmployee")
             {
                 Shared.Entities.FullTimeEmployee employee = (Shared.Entities.FullTimeEmployee)emp;
@@ -43,9 +42,8 @@ namespace PresentationLayerWinform
 
         private void updateEmployeeButton_Click(object sender, EventArgs e)
         {
-            DataAccessLayer.DALEmployeesEF dalef = new DataAccessLayer.DALEmployeesEF();
-            BusinessLogicLayer.BLEmployees bl = new BusinessLogicLayer.BLEmployees(dalef);
-            if(indexForm.typeEmployeeGlobal == "FullTime")
+            ServiceLayer.ServiceEmployeeProxy proxy = new ServiceLayer.ServiceEmployeeProxy();
+            if (indexForm.typeEmployeeGlobal == "FullTime")
             {
                 Shared.Entities.FullTimeEmployee emp = new Shared.Entities.FullTimeEmployee()
                 {
@@ -54,7 +52,7 @@ namespace PresentationLayerWinform
                     StartDate = datePicker.Value,
                     Salary = (int)salaryBox.Value
                 };
-                bl.UpdateEmployee(emp);
+                proxy.UpdateEmployee(emp);
             }
             else
             {
@@ -65,7 +63,7 @@ namespace PresentationLayerWinform
                     StartDate = datePicker.Value,
                     HourlyRate = (int)hourlyRateBox.Value
                 };
-                bl.UpdateEmployee(emp);
+                proxy.UpdateEmployee(emp);
             }
             this.Close();
         }

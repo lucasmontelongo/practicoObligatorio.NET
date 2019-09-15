@@ -25,9 +25,8 @@ namespace PresentationLayerWinform
 
         private void refreshList()
         {
-            DataAccessLayer.DALEmployeesEF dalef = new DataAccessLayer.DALEmployeesEF();
-            BusinessLogicLayer.BLEmployees bl = new BusinessLogicLayer.BLEmployees(dalef);
-            List<Shared.Entities.Employee> empleados = bl.GetAllEmployees();
+            ServiceLayer.ServiceEmployeeProxy proxy = new ServiceLayer.ServiceEmployeeProxy();
+            List<Shared.Entities.Employee> empleados = proxy.GetAllEmployees();
             List<Shared.Entities.EmployeeMuestraWinform> empleadosTabla = new List<Shared.Entities.EmployeeMuestraWinform>();
             empleados.ForEach(x =>
             {
