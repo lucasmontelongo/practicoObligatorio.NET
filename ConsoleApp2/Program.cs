@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using DataAccessLayer.Model;
+using System.ServiceModel;
 
 namespace ConsoleApp2
 {
@@ -11,7 +12,7 @@ namespace ConsoleApp2
     {
         static void Main(string[] args)
         {
-            DataAccessLayer.DALEmployeesEF en = new DataAccessLayer.DALEmployeesEF();
+            //DataAccessLayer.DALEmployeesEF en = new DataAccessLayer.DALEmployeesEF();
 
             //Shared.Entities.Employee prueba = en.GetEmployee(1);
             //if(prueba != null)
@@ -78,6 +79,11 @@ namespace ConsoleApp2
             //{
             //    Console.WriteLine(e.Message);
             //}
+
+            ServiceLayer.ServiceEmployeeProxy proxy;
+            proxy = new ServiceLayer.ServiceEmployeeProxy();
+            Console.WriteLine("Client is running at " + DateTime.Now.ToString());
+            Console.WriteLine("Sum of two numbers... 5+5 =" + proxy.CalcPartTimeEmployeeSalary(5, 2));
 
             Console.ReadLine();
         }

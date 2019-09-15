@@ -90,7 +90,7 @@
             this.Controls.Add(this.nameBox);
             this.Controls.Add(this.label1);
             this.Name = "deleteEmployeeForm";
-            this.Text = "deleteEmployeeForm";
+            this.Text = "Eliminar empleado";
             this.ResumeLayout(false);
             this.PerformLayout();
 
