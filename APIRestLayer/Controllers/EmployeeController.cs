@@ -4,9 +4,11 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
+using System.Web.Http.Cors;
 
 namespace APIRestLayer.Controllers
 {
+    [EnableCors(origins: "http://localhost:60250", headers: "*", methods: "*")]
     public class EmployeeController : ApiController
     {
         BusinessLogicLayer.BLEmployees blHandler = new BusinessLogicLayer.BLEmployees(new DataAccessLayer.DALEmployeesEF());

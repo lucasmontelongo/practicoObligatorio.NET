@@ -17,6 +17,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ServiceLayer", "ServiceLaye
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "APIRestLayer", "APIRestLayer\APIRestLayer.csproj", "{C79F62B0-5116-47BC-A0FD-FAB9B998F481}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MVCLayer", "MVCLayer\MVCLayer.csproj", "{17B7EF80-6AA1-4520-B93A-25D7DF842FE2}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -51,6 +53,10 @@ Global
 		{C79F62B0-5116-47BC-A0FD-FAB9B998F481}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C79F62B0-5116-47BC-A0FD-FAB9B998F481}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C79F62B0-5116-47BC-A0FD-FAB9B998F481}.Release|Any CPU.Build.0 = Release|Any CPU
+		{17B7EF80-6AA1-4520-B93A-25D7DF842FE2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{17B7EF80-6AA1-4520-B93A-25D7DF842FE2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{17B7EF80-6AA1-4520-B93A-25D7DF842FE2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{17B7EF80-6AA1-4520-B93A-25D7DF842FE2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

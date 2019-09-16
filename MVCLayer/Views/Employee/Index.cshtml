@@ -1,0 +1,43 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+@model List<MVCLayer.Models.EmployeeViewModel>
+
+
+<table class="table-bordered">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>StartDate</th>
+            <th>Type</th>
+            <th>Salary</th>
+            <th>HourlyRate</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+        <tr>
+            <td>@item.Id</td>
+            <td>@item.Name</td>
+            <td>@item.StartDate</td>
+            @if (item.Salary > 0)
+            {
+                <td>FullTime</td>
+                <td>@item.Salary</td>
+                <td></td>
+            }
+            else
+            {
+                <td>PartTime</td>
+                <td></td>
+                <td>@item.HourlyRate</td>
+            }
+        </tr>
+        }
+    </tbody>
+</table>
+
